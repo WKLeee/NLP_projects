@@ -1,0 +1,11 @@
+version: '2.3'
+services:
+   app:
+      image: tensorflow/tensorflow:latest-gpu-py3
+      container_name: ramen_ai_app
+      volumes:
+         - ./app:/app
+      runtime: nvidia
+      build:
+        context: .
+        dockerfile: Dockerfile
